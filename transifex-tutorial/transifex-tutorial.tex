@@ -1,30 +1,28 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[12pt, a4paper]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage[colorlinks=true]{hyperref}
 \usepackage{graphicx}
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage{fontspec}
-\setsansfont{DejaVu Sans}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1cm}
 
 
 \title{How to translate a book using Transifex}
-\author{Siyavula Education}
+\author{\includegraphics[width=6cm]{images/Siyavulalogo.png}}
 \date{}
 
 
 
 \begin{document}
 \maketitle
-
-\section*{What is Transifex?}
+\tableofcontents
+\section{What is Transifex?}
 
 Transifex is an open-source computer aided translation tool. It is a web application that allows teams of people to manage and perform translations of texts. You can read more about Transifex here: \url{https://www.Transifex.com/}. Siyavula  runs its own copy of Transifex at  \url{http://translate.siyavula.com}, this is where you will do your translations.
 
 
-\section*{Step 1: Registering a new user account}
+\section{Registering a new user account}
 
 Go to \url{http://translate.siyavula.com} in your browser. You should see something like:
 
@@ -42,10 +40,11 @@ Please choose a username and enter a valid email address. Choose password and en
 \begin{center}
     \centerline{\includegraphics[width=0.8\paperwidth]{images/signedin.png}}
 \end{center}
+Please enter you first and last name on this page and hit ``save''. This is not crucial and can be done at a later time.
 
 
 
-\section*{Step 2: Finding the project you will work on}
+\section{Finding the project you will work on}
 
 Let's assume you have been assigned to the ``Atomic Combinations 1'' resource under the ``Physical Sciences Grade 11'' project. Clicking on the ``Projects'' link at the top of the page should take you to a page that looks like this:
 \begin{center}
@@ -70,7 +69,7 @@ Click on the button that says ``Translate now''. This will take you to the onlin
 
 
 
-\section*{Step 3: Translating strings online}
+\section{Translating strings online}
 You should find yourself in the online translation editor. This is where the translations occur. The window on the left shows the source language strings (English in our case) and on the right you may see some Afrikaans strings or empty boxes, where the strings have not been translated yet. It looks like this:
 \begin{center}
     \centerline{\includegraphics[width=0.8\paperwidth]{images/translatestrings.png}}
@@ -98,28 +97,46 @@ In some cases the translated string is the same as the original string, maybe it
 
 \textbf{NB!!}
 
-Sometimes you will find English strings that looks like the following:
-\begin{verbatim}
-Remember that it is only the <_:emphasis-1/> that are involved in bonding, 
+Sometimes you will find English strings that look like the following:
+
+\begin{quotation}
+``Remember that it is only the \verb|<_:emphasis-1/>| that are involved in bonding, 
 and so when diagrams are drawn to show what is happening during bonding, 
 it is only these electrons that are shown. Dots or crosses represent electrons 
-in different atoms.
-\end{verbatim}
+in different atoms.''
+\end{quotation}
 
-The important thing to note is the \verb|<_:emphasis-1/>| that is contained within the string. This is a special marker that Transifex uses to show that a string that will be translated elsewhere is contained within the paragraph or sentence you are currently busy with. The \texttt{emphasis} means the the string is contained within a piece of text marked as \textbf{bold} or \textit{italics} in the book and as such will be translated on its own. \textbf{Please make sure that you include this special marker in your translated string}. If you forget to include it, Transifex will warn you about it. You may see something like:
+
+The important thing to note is the \verb|<_:emphasis-1/>| that is contained within the string. The original string looked as follows in the PDF version of the book:
+
+\begin{quotation}
+``Remember that it is only the \fcolorbox{red}{white}{\textit{valens electrons}} that are involved in bonding, 
+and so when diagrams are drawn to show what is happening during bonding, 
+it is only these electrons that are shown. Dots or crosses represent electrons 
+in different atoms.''
+\end{quotation}
+
+The red box shows the text that is represented by the special marker in the previous example. This is a special marker that Transifex uses to show a phrase or word that has been isolated elsewhere for translation, so there is no need for it to be translated in this paragraph. This will avoid duplication of effort. \textbf{Please make sure that you include this special marker in the relevant place in your Afrikaans translation}. You can copy and paste the marker from the English string on the left to the Afrikaans version on the right.  If you forget to include it, Transifex will warn you about it. You may see something like:
 \begin{center}
     \centerline{\includegraphics[width=0.8\paperwidth]{images/extra_tags.png}}
 \end{center}
 The warning will dissappear if you include the entire marker \verb|<_:emphasis-1/>| in the text:
 \begin{center}
     \centerline{\includegraphics[width=0.8\paperwidth]{images/extra_tags-2.png}}
+\small\it
+In the above image, the Afrikaans version of the paragraph contains the marker in the correct place.
 \end{center}
+
+
+
 \textbf{Note:} in the screenshots above the special marker was called \verb|<_:number-1/>|. You will see various kinds of markers starting with \verb|<_:| and ending with \verb|/>| while you do translations. Please remember to include them in the translated strings. Many of them contain special commands that denote chemical symbols, units, numbers etc.
 
 Sometimes it can be difficult to translate a string properly if you cannot see the strings contained within the special markers. In these cases it will help if you consult the PDF version of the chapter you are working on. You should be able to hit \texttt{ctrl} and \texttt{f} simultaneously on your keyboard while inside your PDF reader, that will bring up a search box into which you can type the english string you are translating. This will find that string for you in the document and let you scrutinise the full original string in context.
 
 
-\section*{Step 4: Reviewing translations}
+At the bottom of the translation editor you will see a button labelled ``Save all''. You can hit this button to make sure all your work has been saved.
+
+\section{Reviewing translations}
 
 If you are reviewing other people's translations, you can mark them as reviewed and correct by clicking the checkbox next to the translated string. This checkbox is marked on the image below with the red box on the right. If you have a suggestion for a different or better translation, you can click the \texttt{suggestions} tab beneath the English string and enter your suggestion there:
 \begin{center}
@@ -129,18 +146,18 @@ If you are reviewing other people's translations, you can mark them as reviewed 
 
 
 
-\section*{Miscellaneous}
+\section{Miscellaneous}
 
-\subsection*{Special characters}
+\subsection{Special characters}
 
 To get the \^{e} or \"{e} and other accent signs in Windows: 
 \begin{center}
-\textbf{Programs » Accessories » System Tools » Character Map}. 
+\textbf{Programs $\rightarrow$ Accessories $\rightarrow$» System Tools $\rightarrow$» Character Map}. 
 \end{center}
-This will open the character map for you. To do the same in Ubuntu Linux use: \textbf{<Alt>-<F2>} and type ``character map''.
+This will open the character map for you. To do the same in Ubuntu Linux use: $<$Alt$>$+$<$F2$>$ and type ``character map''.
 
-\subsection*{Reading the original text in context}
+\subsection{Reading the original text in context}
 
-It may be useful to have the PDF of the section you are translating open. This will enable you to search for the strings you are translating and view them in context. To search for a string in Adobe Acrobat Reader hit \textbf{<Ctrl>-<F>} in Acrobat Reader and type the string you want to search for. This is a fast way of locating text in a document.
+It may be useful to have the PDF of the section you are translating open. This will enable you to search for the strings you are translating and view them in context. To search for a string in Adobe Acrobat Reader hit $<$Ctrl$>$+$<$F$>$ in Acrobat Reader and type the string you want to search for. This is a fast way of locating text in a document.
 
 \end{document}
